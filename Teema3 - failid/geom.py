@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     # b
     point = Point(x=15, y=0)
-    point.centre_rotate(3)  # rotate by 3 radians
+    point.centre_rotate(3.14 / 3)  # rotate by 3 radians
     print(point)
     # x: -14.849887
     # y: 2.116800
