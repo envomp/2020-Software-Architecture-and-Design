@@ -2,15 +2,6 @@ import java.text.DecimalFormat;
 
 /**
  * any x and y must be bigger than Double.MIN_VALUE and smaller than Double.MAX_VALUE
- * c^2 = a^2 + b^2
- * <p> Kui keerutamisel ümber koordinaatide
- * keskpunkti muutub punkti theta, siis
- * keerutamisel ümber punkti p muutub punktist p
- * meie punkti suunduva vektori theta:
- * <p>
- * rho = Math.sqrt(x*x + y*y)
- * <p>
- * theta = Math.atan2(y, x)
  **/
 class Point {
 
@@ -67,8 +58,7 @@ class Point {
      * Point representing the vector from self to other Point
      * <p>
      * Vector (x, y) from point (x1, x2) to another point (x2, y2) is defined as
-     * x = x2 - x1
-     * y = y2 - y1
+     * (x, y) = (x2 - x1, y2 - y1)
      */
     public Point vectorTo(Point other) {
         return new Point(other.x - x, other.y - y);
@@ -77,10 +67,9 @@ class Point {
     /**
      * Move by dx horizontally, dy vertically
      * <p>
-     * Point (x1, y1) translation in 2D space is defined as
+     * Point translation in 2D space is defined as
      * <p>
-     * x = x1 + dx
-     * y = y1 + dx
+     * (x, y) = (old x + dx, old y + dy)
      */
     public void translate(double dx, double dy) {
         x += dx;
@@ -90,9 +79,8 @@ class Point {
     /**
      * Scale by a factor
      * <p>
-     * Point (x1, y1) scaling by factor of k in 2D space is defined as
-     * x = x1 * k
-     * y = y1 * k
+     * Point scaling by factor of k in 2D space is defined as
+     * (x, y) = (old x * k, old y * k)
      */
     public void scale(double factor) {
         x *= factor;
@@ -102,7 +90,7 @@ class Point {
     /**
      * Rotate around origin (0, 0) by angle
      * <p>
-     * Point (x1, x2) rotation around (0, 0) origin is defined as
+     * Point rotation around (0, 0) origin is defined as
      * this.theta % (2*pi) = ((old this).theta + angle) % (2*pi)
      */
     public void centre_rotate(double angle) {
@@ -114,7 +102,7 @@ class Point {
     /**
      * Rotate around p by angle
      * <p>
-     * Point (p) rotation around another point (old this) is defined as
+     * Point rotation around another point (p) is defined as
      * p.vectorTo(this).theta % (2*pi) = (p.vectorTo(old this).theta + angle) % (2*pi)
      */
     public void rotate(Point other, double angle) {
