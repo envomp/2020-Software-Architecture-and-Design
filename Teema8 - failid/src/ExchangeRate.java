@@ -13,7 +13,7 @@ public class ExchangeRate {
         return rateTable.get(new Exchange(from, to));
     }
 
-    public static void printTable() {
+    public static String printTable() {
         StringBuilder table = new StringBuilder().append("<table><tr><th>From</th><th>To</th><th>Rate</th></tr>");
 
         for (Exchange exchange : rateTable.keySet()) {
@@ -29,5 +29,6 @@ public class ExchangeRate {
 
         table.append("</table>");
         System.out.println(table.toString());
+        return table.toString();
     }
 }

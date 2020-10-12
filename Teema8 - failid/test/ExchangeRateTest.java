@@ -23,5 +23,6 @@ class ExchangeRateTest {
 		ExchangeRate.addRate(cur2, cur3, 4.0);
 		ExchangeRate.addRate(cur4, cur3, 16.0);
 		ExchangeRate.printTable();
+
 	}
 }
