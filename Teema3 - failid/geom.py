@@ -2,11 +2,14 @@ import math
 
 
 class Point:
-    "Two-dimensional points"
+    """Two-dimensional points"""
 
     def __init__(self, x=0.0, y=0.0):
         self._x = x
         self._y = y
+
+    def __repr__(self):
+        return f"({self.x()}, {self.y()})"
 
     def __str__(self):
         result = "\n".join(["x: %f" % self.x(),
@@ -40,6 +43,9 @@ class Point:
     def vectorTo(self, other):
         """Returns the Point representing the vector from self to other Point"""
         return Point(other.x() - self.x(), other.y() - self.y())
+
+    def midpoint(self, other):
+        return Point((self.x() + other.x()) / 2, (self.y() + other.y()) / 2)
 
     # Commands
 
