@@ -1,0 +1,9 @@
+Kood on saadaval: https://github.com/envomp/2020-automated-testing-project
+
+Et saada kood enda arvutisse saab jooksutada konsoolis:
+
+git clone https://github.com/envomp/2020-automated-testing-project.git
+
+Või siis saab ka koodi vaadata läbi GitHub'i visuaalse liidese: https://github.com/envomp/2020-automated-testing-project/blob/master/src/test/java/ee/taltech/weather/service/ConsoleServiceTest.java
+
+Kood on lisaks ka Kood.rar failis ning käivitamise juhend on seal sees README.md failis
